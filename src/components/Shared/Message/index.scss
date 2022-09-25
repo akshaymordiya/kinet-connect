@@ -1,0 +1,15 @@
+@import "../../../scss/_variables.scss";
+
+.message {
+  display: block;
+  padding: 0.3rem 0.1rem;
+  
+  h4 {
+    color: $primary;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

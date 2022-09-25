@@ -1,0 +1,93 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.popup_wrapper {
+  position: fixed;
+  inset: 0; /* inset sets all 4 values (top right bottom left) much like how we set padding, margin etc., */
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+  padding: 40px 20px 20px;
+  
+  @include animation(content_overlay);
+
+  &.visible {
+    display: flex;
+  }
+
+  .popup_container {
+    width: 100%;
+    width: auto;
+    padding: 1.2rem;
+    background-color: $white;
+    border-radius: 1rem;
+    max-width: 90%;
+    min-width: 400px;
+    max-width: 500px;
+    transition: all 0.3s ease-in-out;
+    
+    @include animation(flipInY);
+    
+    &_header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid $common_bg;
+
+      &_title {
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        color: $primary;
+      }
+
+      .xmark {
+        color: $primary;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+
+    &_body {
+      padding: 1rem 0;
+      padding-bottom: 1.5rem;
+      text-align: justify;
+      color: $secondary_one;
+    }
+
+    &_footer {
+      display: flex;
+      float: right;
+      gap: 1rem;
+
+      .cancel_btn {
+        color: $white;
+        background: $orange;
+        font-weight: 600;
+        
+        &:hover {
+          background: rgba($color: $orange, $alpha: 0.6);
+        }
+      }
+      
+      .submit_btn {
+        background: $green;
+        color: $white;
+        font-weight: 600;
+        
+        &:hover {
+          background: rgba($color: $green, $alpha: 0.6);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@mixin breakpoint($size) {
+  @if $size == media_desktop {
+    @media (max-width : 1024px) { @content; }
+  } @else if $size == media_tablet {
+    @media (max-width : 768px) { @content; }
+  } @else if $size == media_mobile {
+    @media (max-width: 600px) { @content; }
+  } @else if $size == media_mobile_sm {
+    @media (max-width: 480px) { @content; }
+  }@else if $size == media_desktop_lg {
+    @media (min-width : 1024px) { @content; }
+  }@else if $size == media_desktop_extra_lg {
+    @media (min-width : 1800px) { @content; }
+  }@else if $size == media_nest_hub {
+    @media (min-width : 1024px) and (max-width: 1270px) { @content; }
+  }
+}
+
+@mixin animation($name) {
+  @if $name == content_overlay {
+    animation:  content_overlay 1s ease 0s 1 normal none running;
+
+    @keyframes content_overlay {
+      0% {
+        background-color: rgba(0, 0, 0, 0);
+      };
+      100% {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  @if $name == flipInY {
+    animation: flipInY 0.5s ease 0s 1 normal none running;
+
+    @keyframes flipInY {
+      0% {
+         transform: perspective(400px) rotateX(-20deg);
+         opacity: 0;
+      }
+      100% {
+         transform: perspective(400px) rotateX(0deg);
+         opacity: 1;
+      }
+   }
+  }
+
+  @if $name == spin {
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s linear infinite;
+    
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+
+  @if $name == reverse_spin {
+    animation: reverse_spin 1s ease-in-out infinite;
+    -webkit-animation: reverse_spin 1s linear infinite;
+
+    @-webkit-keyframes reverse_spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(-360deg); }
+    }
+    
+    @keyframes reverse_spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+  }
+}

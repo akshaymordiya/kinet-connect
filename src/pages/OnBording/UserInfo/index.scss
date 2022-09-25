@@ -1,0 +1,87 @@
+@import "../../../scss/_mixins.scss";
+@import "../../../scss/_variables.scss";
+
+.title_text_h1 {
+  font-size: 40px !important;
+  height: 40px !important;
+  
+  @include breakpoint(media_desktop_lg){
+    font-size: 60px !important;
+    height: 60px !important;
+  }
+
+  @include breakpoint(media_desktop_extra_lg){
+    font-size: 80px !important;
+    height: 80px !important;
+  }
+}
+
+.input_tab_wrapper {
+  position: relative;
+
+  &_right {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid $primary !important;
+    border-top: 3px solid transparent !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+.input_tab{
+  font-size: 1rem !important;
+  width: 150px !important;
+
+  @include breakpoint(media_desktop_extra_lg){
+    font-size: 1.3rem !important;
+    border-radius: 1.5rem;
+    padding-left: 1.6rem;
+    width: 200px !important;
+  }
+
+  &_left_placement_icon {
+    font-size: 1.1rem;
+  }
+}
+
+.error_text {
+  color: $error;
+}
+
+.loader {
+  width: 230px !important;
+
+  &_x {
+    border: 6px solid $white !important;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+  }
+
+  &_text {
+    line-height: 23px !important;
+    bottom: -10px !important;
+  }
+}
+
+@include breakpoint (media_desktop_lg){
+
+  .container_box {
+    gap: 1rem;
+  }
+
+  .navigation_button {
+    display: flex;
+    gap: 1rem;
+    
+    .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      z-index: 10000;
+    }
+  }
+  
+}

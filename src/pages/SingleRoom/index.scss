@@ -1,0 +1,115 @@
+@import "../../scss/_variables.scss";
+@import "../../scss/_mixins.scss";
+
+.main_wrapper {
+  height: 100vh;
+  background: $common_bg;
+
+  .room_container {
+    height: calc(100% - 16px);
+    padding: 0.5rem 1rem;
+  
+    .leave_btn {
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      background: rgba($color: $orange_light, $alpha: 0.2);
+      color: $orange_light;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  
+    .nav_title_text {
+      font-size: 47px;
+      height: 47px;
+      font-weight: normal;
+      color: $primary;
+      margin-bottom: 1.4rem;
+      
+      @include breakpoint(media_desktop_extra_lg){
+        font-size: 55px;
+      }
+    }
+  
+    &_grid{
+      margin-top: 0.8rem;
+      grid-template-columns: 20% 1fr 20%;
+      height: calc(100% - 91px);
+      grid-template-rows: 20% 1fr 10% 35%;
+      grid-template-areas:
+      'speakers host joiners'
+      'speakers host joiners'
+      'speakers host joiners'
+      'speakers listners joiners';
+      transition: 0.3s all ease-in-out;
+      
+      &.add_chat_area {
+        grid-template-areas:
+        'speakers host chat'
+        'speakers host chat'
+        'speakers host joiners'
+        'speakers listners joiners';
+      }
+  
+      @include breakpoint(media_desktop_extra_lg) {
+        grid-template-rows: 20% 1fr 23% 26%;
+      }
+      
+      
+      &_item {
+        background-color: $white;
+        overflow-y: auto;
+        overflow-x: auto;
+        border-radius: 15px;
+        padding: 1rem;
+        width: auto;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  
+        &.speakers {
+          grid-area: speakers;
+        }
+  
+        &.chat {
+          grid-area:  chat;
+        }
+        
+        &.listners {
+          grid-area: listners;
+        }
+        
+        &.joiners {
+          grid-area: joiners;
+        }
+        
+        &.host {
+          grid-area: host;
+          background-color: $common_bg;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+  
+        .group_vector_icon{
+          width: 26px;
+          height: 26px;
+        }
+  
+        .list_switch_options {
+          display: flex;
+          column-gap: 0.5rem;
+          width: auto;
+          
+          &_icon {
+            width: 17px;
+            height: 17px;
+            padding: 0.3rem;
+            border: 2px solid $secondary_two;
+            border-radius: 5px;
+            
+            &.active {
+              border: 2px solid $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

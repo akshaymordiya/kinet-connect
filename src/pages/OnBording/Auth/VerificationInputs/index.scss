@@ -1,0 +1,67 @@
+@import "../../../../scss/_variables.scss";
+@import "../../../../scss/_mixins.scss";
+
+.input_container_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  &_wrapper {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    &_error_text{
+      color: $error;
+    }
+  
+    .input_box {
+      border-radius: 0px 20px 20px 0px;
+      width: 140px;
+      font-size: 1.1rem;
+
+      &_left_placement {
+        font-size: 1.2rem;
+      }
+
+      @include breakpoint(media_desktop_extra_lg){
+        width: 260px;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &_outer_loader {
+    margin-top: 1rem;
+    
+    &_y {
+      border: 6px solid $yellow !important;
+      border-left: 6px solid transparent !important;
+      border-right: 6px solid transparent !important;
+    }
+
+    &_x{
+      border: 6px solid $white !important;
+      border-left: 6px solid transparent !important;
+      border-right: 6px solid transparent !important;
+    }
+    
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  @include breakpoint(media_desktop_extra_lg){
+    p {
+      font-size: 22px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1.5rem;
+    }
+  }
+}

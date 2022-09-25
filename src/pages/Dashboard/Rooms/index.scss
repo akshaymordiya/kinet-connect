@@ -1,0 +1,19 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+
+
+.header_box {
+  .title_text {
+    color: $primary;
+    font-weight: 600;
+  }
+
+  .excert_text {
+    color: $navbar_text;
+  }
+}
+
+.rooms_list {
+  margin-top: 2rem;
+}

@@ -1,0 +1,30 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.avatar_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &_border {
+    background: $white;
+    margin-left: -17px;
+
+    @include breakpoint(media_desktop_extra_lg){
+      margin-left: -20px;
+    }
+
+    &.avatar_message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $orange;
+      color: $white;
+      outline: 3px solid $white;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}

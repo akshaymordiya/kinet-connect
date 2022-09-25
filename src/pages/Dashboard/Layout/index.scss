@@ -1,0 +1,22 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.dashboard_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  &_box {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 90%;
+    background-color: $common_bg;
+    overflow-y: auto;
+
+    &_icon_wrapper {
+      width: 40px;
+      height: 40px;
+      padding: 0.2rem;
+    }
+  }
+}

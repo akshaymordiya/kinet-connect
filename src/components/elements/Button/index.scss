@@ -1,0 +1,29 @@
+@import "../../../scss/_variables.scss";
+
+button {
+  background: $white;
+  padding: 1rem 2rem;
+  display: flex;
+  margin: 0.5rem 0;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+  gap: 1rem;
+  border: none;
+  outline: none;
+  font-weight: normal;
+  font-size: 1rem;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &.disabled {
+    color: $grey_light;
+  }
+
+  &:hover {
+    box-shadow: none;
+    gap: 1.5rem;
+  }
+}

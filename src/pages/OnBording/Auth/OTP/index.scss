@@ -1,0 +1,41 @@
+@import "../../../../scss/_variables.scss";
+
+.otp_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: auto;
+
+  &_outer_loader {
+    margin-top: 1rem;
+    
+    &_y {
+      border: 6px solid $yellow !important;
+      border-left: 6px solid transparent !important;
+      border-right: 6px solid transparent !important;
+    }
+
+    &_x{
+      border: 6px solid $white !important;
+      border-left: 6px solid transparent !important;
+      border-right: 6px solid transparent !important;
+    }
+    
+  }
+
+  &_error_text{
+    color: $error;
+  }
+
+  .otp_input_boxes {
+    display: flex;
+    gap: 1rem;
+
+    .input_box {
+      width: 15px;
+      text-align: center;
+    }
+  }
+}

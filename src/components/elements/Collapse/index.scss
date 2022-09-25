@@ -1,0 +1,34 @@
+@import "../../../scss/_variables.scss";
+
+.header_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  width: 100%;
+  color: $secondary_two;
+  border-bottom: 2px solid $grey_light;
+  cursor: pointer;
+
+  .collapse_icon_vector{
+    width: 17px;
+    height: 17px;
+  }
+
+}
+
+.content {
+  height: 0;
+  overflow-y: auto;
+  transition: 0.2s all ease-out;;
+  
+  &.expanded {
+    padding: 0.6rem 0;
+    height: calc(100% - 20px);
+  }
+
+  &::-webkit-scrollbar{
+    display: none;
+    width: 0;
+  }
+}

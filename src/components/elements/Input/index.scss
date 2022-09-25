@@ -1,0 +1,65 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.input_container{
+  background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  
+  input {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  
+    &::placeholder {
+      color: $grey_light;
+    }
+  }
+
+  &_left_placement{
+    color: $primary;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border-right: 2px solid $grey_light;
+  }
+  
+  &_right_placement{
+    color: $primary;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border-left: 2px solid $grey_light;
+  }
+  
+  .selected_value{
+    padding-right:0.6rem;
+    border-right: 2px solid $grey_light;
+  }
+
+  &_custom_loader {
+    height: auto !important;
+    padding: 0 1rem !important;
+
+    &_y {
+      display: none !important;
+    }
+
+    &_x {
+      height: 14px !important;
+      width: 14px !important;
+      position: initial !important;
+      top: 0px !important;
+      border: 3px solid $primary !important;
+      border-right: 3px solid transparent !important;
+    }
+  }
+}
+

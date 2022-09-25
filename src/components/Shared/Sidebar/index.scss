@@ -1,0 +1,91 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.sidebar_container {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:1rem 1.5rem;
+  max-width: 90%;
+  background-color: $white;
+  border-radius: 0 20px 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+
+  @include breakpoint(media_desktop_extra_lg){
+    width: 330px;
+  }
+  
+  .title {
+    font-size: 45px;
+    height: 45px;
+    font-weight: normal;
+    color: $primary;
+    margin-bottom: 1.4rem;
+    
+    @include breakpoint(media_desktop_extra_lg){
+      font-size: 55px;
+    }
+  }
+
+  .navigation_items {
+    padding: 0.5rem 0;
+    margin-top: 10%;
+    
+    .navigation_item {
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 13px;
+      transition: 0.2s all ease-in-out;
+      margin: 0;
+      color: $navbar_text;
+      
+      &:hover {
+        background-color: $common_bg;
+        color: $primary;
+        font-weight: bold;
+      }
+      
+      &.active {
+        background-color: $common_bg;
+        color: $primary;
+        font-weight: bold;
+      }
+      
+      &_icons_wrapper{
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .nav_icon{
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .bottom_btns {
+    margin-top: auto;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+      max-width: 100%;
+      background-color: $primary;
+      color: $white;
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+      .btn_start_icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      &:hover {
+        gap: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      }
+    }
+  }
+}
