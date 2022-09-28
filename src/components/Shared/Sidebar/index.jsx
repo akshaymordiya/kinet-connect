@@ -32,8 +32,8 @@ const Sidebar = () => {
       <UserDetailsCard user={user} />
       <List className='navigation_items'>
         {menuItems.map((menu) => (
-          <Link to={menu.route} style={linkDefaultStyle}>
-            <List.ListItem key={menu.id} className={`navigation_item ${pathname === menu.route && 'active'}`}>
+          <Link  key={menu.id} to={menu.route} style={linkDefaultStyle}>
+            <List.ListItem className={`navigation_item ${pathname === menu.route && 'active'}`}>
                 <div className='navigation_item_icons_wrapper'>
                   <FontAwesomeIcon icon={menuItemsIcon[menu.icon]} className="nav_icon" />
                 </div>

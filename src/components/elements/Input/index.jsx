@@ -4,6 +4,7 @@ import "./index.scss"
 
 const Input = forwardRef(({
   className,
+  containerClassName = "",
   placeholder = "",
   type = "",
   value = "",
@@ -17,7 +18,7 @@ const Input = forwardRef(({
   inputAdditionalProps = {}
 }, inputRef) => {
   return (
-    <div className="input_container">
+    <div className={`input_container ${containerClassName}`}>
       {leftPlacement && (
         <div className={`input_container_left_placement ${leftPlacementClassName}`}>
           {leftPlacement}

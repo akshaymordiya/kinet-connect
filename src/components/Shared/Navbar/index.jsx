@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import useAuth from '../../../hooks/useAuth';
@@ -30,8 +30,13 @@ const Navbar = ({
         {renderInsideLeftWrapper && renderInsideLeftWrapper}
       </div>
       <div className='nav_items_wrapper'>
-        {renderInsideRightWrapper && renderInsideRightWrapper}
-        <div className="nav_items_wrapper_devider"></div>
+        {renderInsideRightWrapper && (
+          <Fragment>
+            {renderInsideRightWrapper}  
+          <div      className="nav_items_wrapper_devider">
+          </div>
+        </Fragment>
+        )}
         <Button 
           text="Logout" 
           className="logout_btn"

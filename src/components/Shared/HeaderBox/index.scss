@@ -1,0 +1,12 @@
+@import "../../../scss/_variables.scss";
+
+.header_box {
+  .title_text {
+    color: $primary;
+    font-weight: 600;
+  }
+
+  .excert_text {
+    color: $navbar_text;
+  }
+}

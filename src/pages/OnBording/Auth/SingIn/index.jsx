@@ -1,7 +1,7 @@
 import React, { useState, useCallback} from 'react';
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import Input from '../../../../components/elements/Input';
 import useLoader from '../../../../hooks/useLoader';
@@ -75,7 +75,7 @@ const SignIn = () => {
             value={payload.username}
             onChange={({ target : { value }}) => updatePaylaod("username", value)}
             leftPlacement={(
-              <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon icon={faAt} />
             )}
             />
           <Input

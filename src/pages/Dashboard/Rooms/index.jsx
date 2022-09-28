@@ -1,26 +1,55 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import "./index.scss"
-import TextCard from '../../../components/Shared/TextCard'
 import RoomCard from '../../../components/Shared/RoomCard'
 import Grid from '../../../components/elements/Grid'
-import useAuth from '../../../hooks/useAuth'
 import { ROOM } from '../../../constant/contents/rooms.contents' 
-import { formateMessage } from '../../../helper'
+import HeaderBox from '../../../components/Shared/HeaderBox'
+import Input from '../../../components/elements/Input'
+import Button from '../../../components/elements/Button'
+import Dropdown from '../../../components/elements/Dropdown';
+
+const sortOptions = [
+  {
+    key: "latest",
+    value: "latest",
+    displayText: "Latest First"
+  },
+  {
+    key: "trending-topics",
+    value: "trending-topics",
+    displayText: "Trending Topics"
+  }
+]
 
 const Rooms = () => {
-  const {
-    authenticatedUser
-  } = useAuth();
-  
+
+  const [searchText, setSearchText] = useState("");
+  const [sortOption, setSortOption] = useState("");
+
   return (
     <Fragment>
-      <div className="header_box">
-        <TextCard
-          title={formateMessage(ROOM.HEADER_TITLE_TEXT, { userFullName: authenticatedUser?.fullName })}
-          titleClass="title_text"
-          excert={ROOM.HEADER_EXCERT_TEXT}
-          excertClass='excert_text'
+      <HeaderBox 
+        titleText={ROOM.HEADER_TITLE_TEXT}
+      />
+      <div className='rooms_header_container'>
+        <Input 
+          placeholder="search"
+          containerClassName="rooms_header_container_input_container"
+          className="rooms_header_container_input_container_input_box"
+          leftPlacement={(
+            <FontAwesomeIcon icon={faSearch} />
+          )}
+          type="text"
+          value={searchText}
+          onChange={({ target: { value }}) => setSearchText(value)}
         />
+        <div className='rooms_header_container_right_portion'>
+          <Button
+            text="Refresh"
+          />
+        </div>
       </div>
       <Grid templateColumns={{lg: "col_3", xlg: "col_4"}} overrideClass='rooms_list'>
         <Grid.GridItem>

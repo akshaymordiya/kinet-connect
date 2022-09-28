@@ -1,19 +1,25 @@
-@import "../../../scss/_variables.scss";
-@import "../../../scss/_mixins.scss";
+.rooms {
+  &_header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    &_input_container {
+      height: 45px !important;
 
+      &_input_box {
+        padding: 0 0.8rem !important;
+      }
+    }
 
-.header_box {
-  .title_text {
-    color: $primary;
-    font-weight: 600;
+    &_right_portion {
+      button {
+        padding: 0.8rem 2rem !important
+      }
+    }
   }
 
-  .excert_text {
-    color: $navbar_text;
+  &_list {
+    margin-top: 1rem;
   }
-}
-
-.rooms_list {
-  margin-top: 2rem;
 }

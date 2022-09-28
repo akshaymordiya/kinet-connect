@@ -8,6 +8,7 @@ const Dropdown = ({
   selectedValue = "",
   placeHolderText = "Choose Value",
   setSelectedValuesHandler = () => {},
+  enableSearchOnOptions = false
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [optionsData, setOptionsData] = useState({
@@ -46,13 +47,15 @@ const Dropdown = ({
         />
       </div>
       <ul className={`options_list ${isOpen ? "show" : ""}`}>
-        <li className='option_list_item'>
-          <Input 
-            placeholder="Search..."
-            className="option_list_item_input"
-            onChange={filterHandler}
-          />
-        </li>
+        {enableSearchOnOptions && (
+          <li className='option_list_item'>
+            <Input 
+              placeholder="Search..."
+              className="option_list_item_input"
+              onChange={filterHandler}
+              />
+          </li>
+        )}
         {optionsData[optionsData.isFiltered ? "filteredList" : "list"].map(({ key, value, displayText }) => (
           <li key={key} className={`option_list_item ${selectedValue === displayText ? "active" : ""}`} onClick={() => optionClickHandler(value)}><p>{displayText}</p></li>
         ))}

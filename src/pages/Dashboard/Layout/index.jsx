@@ -10,15 +10,7 @@ const Dashboard = () => {
     <div className="dashboard_container">
       <Sidebar />
       <div className="dashboard_container_box">
-        <Navbar
-          renderInsideRightWrapper={
-            <Icon
-              vecotrName="search" 
-              bgWrapper 
-              bgWrapperClass='rooms_container_box_icon_wrapper'
-            />
-          }
-        />
+        <Navbar />
         <Outlet />
       </div>
     </div>
