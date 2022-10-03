@@ -25,6 +25,23 @@
     }
   }
 
+  textarea {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  
+    &::placeholder {
+      color: $grey_light;
+    }
+  }
+
   &_left_placement{
     color: $primary;
     padding: 0 1rem;

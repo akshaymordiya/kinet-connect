@@ -26,7 +26,7 @@ const sortOptions = [
 const Rooms = () => {
 
   const [searchText, setSearchText] = useState("");
-  const [sortOption, setSortOption] = useState("");
+  // const [sortOption, setSortOption] = useState("");
 
   return (
     <Fragment>

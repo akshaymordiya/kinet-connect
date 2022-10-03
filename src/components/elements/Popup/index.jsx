@@ -50,8 +50,7 @@ Popup.Header = function Header({
   return (
     <div className="popup_container_header">
       {children || (
-        <h1            className='popup_container_header_title'>   {title}
-        </h1>
+        <h1 className='popup_container_header_title'>{title}</h1>
       )}
       <FontAwesomeIcon 
         icon={faCircleXmark}  

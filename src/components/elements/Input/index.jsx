@@ -15,6 +15,8 @@ const Input = forwardRef(({
   leftPlacement = null,
   leftPlacementClassName = "",
   showLoaderOnRightPlacement = false,
+  minLength = "30",
+  maxLength = "60",
   inputAdditionalProps = {}
 }, inputRef) => {
   return (
@@ -24,16 +26,30 @@ const Input = forwardRef(({
           {leftPlacement}
         </div>
       )}
-      <input
-        ref={inputRef}
-        className={className}
-        placeholder={placeholder}
-        type={type}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        {...inputAdditionalProps}
-      />
+      {type === "textarea" ? (
+        <textarea
+          ref={inputRef}
+          placeholder={placeholder}
+          className={className}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          minLength={minLength}
+          maxLength={maxLength}
+          {...inputAdditionalProps}
+          />
+      ) : (
+        <input
+          ref={inputRef}
+          className={className}
+          placeholder={placeholder}
+          type={type}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          {...inputAdditionalProps}
+        />
+      )}
       {showLoaderOnRightPlacement && (
         <Loader 
           show={showLoaderOnRightPlacement} className="input_container_custom_loader"

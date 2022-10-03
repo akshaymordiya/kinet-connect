@@ -56,6 +56,10 @@ const user = {
   getUserAvatar: (url) => API.get(url)
 }
 
+const room = {
+  create: (payload) => API.post('/rooms/create', payload)
+}
+
 //intercepetor
 Http.interceptors.response.use(
   (config) => config,
@@ -85,5 +89,6 @@ Http.interceptors.response.use(
 export default {
   api: API,
   auth,
-  user
+  user,
+  room
 }

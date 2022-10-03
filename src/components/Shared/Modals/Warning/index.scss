@@ -1,0 +1,31 @@
+@import "../../../../scss/_variables.scss";
+
+.warning {
+
+  &_title {
+    color: $yellow;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  &_body {
+    &_title {
+      color: $dark;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &_footer {
+    &_btn {
+      padding: 0.8rem 2rem !important;
+      margin: 0 !important;
+      margin-top: 0.5rem !important;
+      border-radius: 10px !important;
+      background: rgba($yellow, 0.2);
+      color: $yellow;
+      font-weight: 550 !important;
+    }
+  }
+}
