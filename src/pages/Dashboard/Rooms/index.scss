@@ -6,15 +6,22 @@
 
     &_input_container {
       height: 45px !important;
-
+      
       &_input_box {
+        width: 300px;
         padding: 0 0.8rem !important;
       }
     }
 
     &_right_portion {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-end;
+
       button {
-        padding: 0.8rem 2rem !important
+        padding: 0.8rem 2rem !important;
+        font-weight: 600;
+        margin: 0 !important;
       }
     }
   }

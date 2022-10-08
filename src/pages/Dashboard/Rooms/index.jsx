@@ -7,8 +7,8 @@ import Grid from '../../../components/elements/Grid'
 import { ROOM } from '../../../constant/contents/rooms.contents' 
 import HeaderBox from '../../../components/Shared/HeaderBox'
 import Input from '../../../components/elements/Input'
-import Button from '../../../components/elements/Button'
-import Dropdown from '../../../components/elements/Dropdown';
+import Button from '../../../components/elements/Button';
+import Pagination from '../../../components/Shared/Pagination';
 
 const sortOptions = [
   {
@@ -35,7 +35,7 @@ const Rooms = () => {
       />
       <div className='rooms_header_container'>
         <Input 
-          placeholder="search"
+          placeholder="Search by topic or host name"
           containerClassName="rooms_header_container_input_container"
           className="rooms_header_container_input_container_input_box"
           leftPlacement={(
@@ -46,6 +46,23 @@ const Rooms = () => {
           onChange={({ target: { value }}) => setSearchText(value)}
         />
         <div className='rooms_header_container_right_portion'>
+          <Pagination>
+            <Pagination.Selector
+              selectorTitle='Page Limit'
+              selectorValue='12'
+              selectorNumbers={["9","10","11","12","13","14","15"]}
+              showNumbersInOneRow
+              popoverStartFrom='right'
+            />
+            <Pagination.Selector
+              selectorTitle='Page No'
+              selectorNumbers={["9","10","11","12","13","14","15", "16","17","18"]}
+              selectorValue='12'
+            />
+            <Pagination.NavigationButton 
+
+            />
+          </Pagination>
           <Button
             text="Refresh"
           />

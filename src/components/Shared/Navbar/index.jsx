@@ -33,7 +33,7 @@ const Navbar = ({
         {renderInsideRightWrapper && (
           <Fragment>
             {renderInsideRightWrapper}  
-          <div      className="nav_items_wrapper_devider">
+          <div className="nav_items_wrapper_devider">
           </div>
         </Fragment>
         )}

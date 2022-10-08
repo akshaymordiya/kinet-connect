@@ -1,0 +1,127 @@
+@import "../../../scss/_variables.scss";
+@import "../../../scss/_mixins.scss";
+
+.pagination_container {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+  
+  &_selector_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    cursor: pointer;
+    position: relative;
+
+    &_label {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-right: 10px;
+      color: $secondary_one;
+
+      &_number {
+        margin-right:10px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary;
+      }
+    }
+
+    &_popover_container {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      gap: 1.2rem;
+      top: 55px;
+      z-index: 3;
+      background-color: $white;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      @include animation(flipInY);
+      
+      &.limited-width {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &.start_from_left {
+        left: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: 15px;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          background: $white;
+          z-index: 10;
+        }
+      }
+
+      &.start_from_right {
+        right: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: 15px;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          background: $white;
+          z-index: 10;
+        }
+      }
+
+      &_collection {
+        display: flex;
+        gap: 1rem;
+      
+        p {
+          width: 15px;
+          max-width: 30px;
+        }
+      }
+    }
+
+    .numbers {
+      color: $secondary_one;
+      font-weight: 600;
+      transition: 0.3s all ease-in-out;
+
+      &:hover,  &.active {
+        color: $primary;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      }
+    }
+
+  }
+  
+  &_navigation_container {
+    display: flex;
+    gap: 0.8rem;
+
+    &_button {
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      background-color: $white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      cursor: pointer;
+      color: $primary;
+    }
+  }
+
+  &_angle_down{
+    font-size: 14px;
+    color: $primary;
+  }
+}
